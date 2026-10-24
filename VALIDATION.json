@@ -1,0 +1,16 @@
+{
+  "release": "v0.1.0-preview",
+  "date": "2026-10-25",
+  "source_config_sha256": "50f5240e6e347cc031fae059664440b89fc74108fc5474f81be6536b7d29b491",
+  "public_config_sha256": "0ed8a5684c74761973e906fe9078dc0c9f53294b75cfeb550d20103afe619418",
+  "personal_identity_removed": true,
+  "only_config_changes": "four Generic identity fields",
+  "source_files_modified": false,
+  "config_has_dk": false,
+  "file_logging_enabled": false,
+  "ocvalidate_1_0_8": "passed",
+  "preparation_script_syntax": "passed",
+  "intentional_missing_dependency": "SimpleHDA.kext; original author download, see INSTALL.md",
+  "binary_changes": "none for included files",
+  "runtime_test": "Original working config confirmed by owner; sanitized identity requires each recipient to prepare/test"
+}

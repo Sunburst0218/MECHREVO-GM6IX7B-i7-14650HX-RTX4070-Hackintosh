@@ -1,0 +1,13 @@
+# Never publish personal/live configurations, backups or reports.
+config.plist
+config.plist.*
+**/config.plist
+**/config.plist.*
+!config.template.plist
+!**/config.template.plist
+opencore-*.txt
+nvram.plist
+*.ioreg
+._*
+.DS_Store
+*.zip
