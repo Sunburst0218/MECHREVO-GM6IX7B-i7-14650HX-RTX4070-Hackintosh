@@ -55,6 +55,16 @@ bash Prepare-EFI.command
 保持 `SystemProductName=MacBookPro16,2`，不要为清除身份而随意改机型。
 用 **OpenCore 1.0.8** 对应的 ocvalidate 再校验填写后的 config。
 
+### Apple 账户登录前：核对候选序列号
+
+macserial/GenSMBIOS 只生成符合格式的候选；机型解码、MLB 校验通过不代表 Apple 服务端未登记。
+用 [Apple Check Coverage](https://checkcoverage.apple.com/) 手动查询候选。
+如果查出真实设备的有效购买、保修或服务记录，弃用该候选及配套 MLB，不拿来登录自己的 Apple 账户。
+“型号与 SMBIOS 一样”只是格式匹配，不代表该身份属于你。
+“无法查询/无效”也不是全球唯一或登录必定成功的证明，不使用真实 Mac 或其他人的身份。
+不要把私人候选写入仓库、Issue 或公开截图。确认后固定使用，不反复为其他故障更换身份。
+
+
 ## 4. 启动条件与系统侧驱动
 
 - 本机已开启独显直连，这是当前显示方案的实测前提。
