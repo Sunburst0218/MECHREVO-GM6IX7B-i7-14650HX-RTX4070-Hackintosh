@@ -1,8 +1,8 @@
 {
-  "release": "v0.1.0-preview",
+  "release": "v0.2.0-preview",
   "date": "2026-10-25",
-  "source_config_sha256": "50f5240e6e347cc031fae059664440b89fc74108fc5474f81be6536b7d29b491",
-  "public_config_sha256": "0ed8a5684c74761973e906fe9078dc0c9f53294b75cfeb550d20103afe619418",
+  "source_config_sha256": "e65cda62a0d03d67bd9e3cc69bad178c87134d755c735224b603cb288a4b1335",
+  "public_config_sha256": "af843679b883f2e85da32fc40ab81419cbeca6e8447625c8ba9c1404be88a46a",
   "personal_identity_removed": true,
   "only_config_changes": "four Generic identity fields",
   "source_files_modified": false,

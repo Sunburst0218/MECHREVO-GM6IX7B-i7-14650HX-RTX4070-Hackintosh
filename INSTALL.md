@@ -5,7 +5,7 @@
 
 ## 1. 解压发布附件
 
-从 Releases 下载 `GM6IX7B-Tahoe-EFI-v0.1.0-preview.zip`。
+从 Releases 下载 `GM6IX7B-Tahoe-EFI-v0.2.0-preview.zip`。
 解压后顶层为说明、准备脚本、`EFI/` 和 `ThirdParty/`。
 核对发布页 SHA-256；不要把整个仓库源码 ZIP 当成已经准备好的 EFI。
 
@@ -52,23 +52,15 @@ bash Prepare-EFI.command
 | ROM | 自己机器的稳定网络接口 MAC，保存为 6 字节 Data，不含冒号 |
 
 填写后另存为 `EFI/OC/config.plist`。本包没有可直接复用的身份。
+这些字段需要在安装之前填写，不只是登录 Apple 账户时才需要。公开模板没有活动 config.plist，不能直接启动；生成自己的独立身份后可以按本配置安装，不需要发布者的02号三码，也不要共用一套随机三码。
+
 保持 `SystemProductName=MacBookPro16,2`，不要为清除身份而随意改机型。
 用 **OpenCore 1.0.8** 对应的 ocvalidate 再校验填写后的 config。
-
-### Apple 账户登录前：核对候选序列号
-
-macserial/GenSMBIOS 只生成符合格式的候选；机型解码、MLB 校验通过不代表 Apple 服务端未登记。
-用 [Apple Check Coverage](https://checkcoverage.apple.com/) 手动查询候选。
-如果查出真实设备的有效购买、保修或服务记录，弃用该候选及配套 MLB，不拿来登录自己的 Apple 账户。
-“型号与 SMBIOS 一样”只是格式匹配，不代表该身份属于你。
-“无法查询/无效”也不是全球唯一或登录必定成功的证明，不使用真实 Mac 或其他人的身份。
-不要把私人候选写入仓库、Issue 或公开截图。确认后固定使用，不反复为其他故障更换身份。
-
 
 ## 4. 启动条件与系统侧驱动
 
 - 本机已开启独显直连，这是当前显示方案的实测前提。
-- BIOS 的其他精确版本与设置尚未完整记录，不把通用建议冒充本机已测设置。
+- 本机此前只读记录 BIOS 为 AMI N.1.07MRO13（2024-08-08）；不因此要求他人刷 BIOS。其他设置仍按自己硬件核对。
 - 从备用 U 盘 EFI 启动 macOS Tahoe。
 - NVIDIA：使用官方 1401 为当前 macOS 安装匹配驱动。仅复制 EFI 不会安装 NVRM/NVAccel/用户态组件。
 - 有线：单独安装作者修复的 YT6801 1.0.13 DEXT；本 config **没有 dk 参数**。
@@ -86,3 +78,10 @@ macserial/GenSMBIOS 只生成符合格式的候选；机型解码、MLB 校验�
 
 进入系统后可运行 `sysctl -n kern.bootargs` 核对当前启动参数。
 当前模板 `Misc -> Debug -> Target=3`，没有 0x40 文件日志位，应不再生成 OpenCore 普通启动日志文件。
+
+## 6. USB、定位与 App Store
+
+本版本启用本机 UTBMap，禁用 UTBDefault。不要再同时启用另一张通用USB图。
+地图定位需开启系统定位总开关和“地图”授权。
+本机 App Store 已恢复登录下载；独立三码不保证所有账户服务必然可用。若其他机器登录失败，先检查网络、日期时间和真实网络接口，不盲目重建网络或修改身份。
+整机睡眠仍未解决；不要把锁屏、关屏或电源灯变化当成完整睡眠验收。

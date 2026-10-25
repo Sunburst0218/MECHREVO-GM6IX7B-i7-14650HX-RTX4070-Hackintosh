@@ -19,7 +19,7 @@
 | NVMeFix | https://github.com/acidanthera/NVMeFix |
 | RealtekRTL8111 | https://github.com/Mieze/RTL8111_driver_for_OS_X |
 | RestrictEvents | https://github.com/acidanthera/RestrictEvents |
-| USBToolBox / UTBDefault | https://github.com/USBToolBox/kext |
+| USBToolBox / UTBMap（本机定制） / UTBDefault（禁用） | https://github.com/USBToolBox/kext |
 | VoodooI2C / VoodooI2CHID / VoodooInput | https://github.com/VoodooI2C/VoodooI2C |
 | VoodooPS2Controller | https://github.com/acidanthera/VoodooPS2 |
 | WhateverGreen | https://github.com/acidanthera/WhateverGreen |
